@@ -10,6 +10,7 @@
   --button-primary-hover: #188ce8;
   --logo-black: #000000;
   --text-white-opacity: #ffffff99;
+  --line-box-clients: #afb1b8;
 
   --container-pading: calc((100% - 1200px) / 2);
 }
@@ -59,7 +60,7 @@ a {
 }
 
 .container {
-  display: flex;
+  /* display: flex; al silenciar esto me funciona la distribucion de la section clients  */
   padding: 0 15px;
   width: 1200px;
   margin: 0 auto;
@@ -158,7 +159,7 @@ header nav .nav-menu .page {
 .contacts-menu {
   display: flex;
   list-style: none;
-  gap: 80px;
+  gap: 10px;
 }
 
 .contacts-menu .item {
@@ -173,6 +174,7 @@ header nav .nav-menu .page {
 .nav-menu .page:hover,
 .nav-menu .page:focus,
 .nav-menu .page.current,
+.contacts-menu .icon-contacts,
 .contacts-menu .item:hover,
 .contacts-menu .item:focus {
   color: var(--accent-color);
@@ -186,6 +188,7 @@ header nav .nav-menu .page {
 
 ul {
   list-style: none;
+  display: flex;
 }
 
 .menu {
@@ -196,7 +199,7 @@ ul {
   line-height: 1.1;
 }
 
-.page:hover .item:hover {
+.page:hover .item:hover .icon-contacts:hover {
   color: var(--accent-color);
 }
 
@@ -212,6 +215,36 @@ ul {
 .active {
   color: var(--accent-color);
 }
+
+header .container .contacts-menu .icon-mailbox {
+  width: 20px;
+  height: 20px;
+  fill: var(--primary-text-color);
+}
+
+header .container .contacts-menu .icon-celphone {
+  width: 20px;
+  height: 20px;
+  margin-left: 30px;
+  fill: var(--primary-text-color);
+  cursor: pointer;
+}
+
+header li .icon-mailbox {
+  display: flex;
+  margin-left: 20px;
+  top:1.16%
+  justify-content: center;
+  cursor: pointer;
+}
+
+
+.icon-contacts:hover {
+  color: var(--accent-color);
+}
+
+
+
 
 /*-------------------------------main content section-----------------------------*/
 /*----------------------------------hero-sections----------------------------------------*/
@@ -298,7 +331,7 @@ ul {
   color: var(--primary-text-color);
 }
 
-/*------------------ TODO: PUEDE BORRARSE LO QUE TENGO ACA hw 04 ------benefits icons TODO: LIN 62 EN INDEX---------------*/
+/*------------------------benefits icons - controls icons benefits section-- LIN 62 EN INDEX---------------*/
 
 .flex-benefits {
   display: flex;
@@ -322,7 +355,7 @@ ul {
   height: 53.69px;
 }
 
-/*--------------------------what we do---------------------------------*/
+/*-----------------------------------------------WHAT WE DO SECTION---------------------------------*/
 
 .section-what {
   font-size: 36px;
@@ -350,19 +383,58 @@ ul {
   margin-right: 30.26px;
 }
 
+/*--------------------------------- CONTROLES DE LA FRASE SOBRE LAS IMAGENES DE SECTION WHAT WE DO */
+
+.container-imgwwd {
+  position: relative;
+  display: inline-block;
+  text-align: center;
+}
+
+.smalltext {
+  color: var(--primary-white-color);
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  width: 212px;
+  text-transform: uppercase;
+}
+
+/* TODO: ensayo para poder poner el background sobre la imagen */
+/* .container-imgwwd {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.2),
+      rgba(0, 0, 0, 0.2)
+    ),
+    url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  text-align: center;
+  font-weight: 900;
+  font-size: 14px;
+  letter-spacing: 0, 06em;
+  line-height: 1.4;
+  text-transform: uppercase;
+  height: -80px;
+} */
+
 /*-------------------------section team----------------------*/
 
 .section-team {
   background-color: var(--background-gray);
 }
 
-.team {
+.section-team .container .team {
   display: flex;
+  justify-content: space-between;
   flex-wrap: wrap;
   align-items: flex-end;
 }
 
-.team li {
+.section-team .container .team li {
   background-color: var(--primary-white-color);
   text-align: center;
   list-style: none;
@@ -370,15 +442,13 @@ ul {
   margin-top: 50px;
   margin-bottom: 94px;
   border-radius: 0px 0px 4px 4px;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-}
+  }
 
-.team li .who-name {
+.section-team .container .team li .who-name {
   margin: 20px 0 10px 0;
 }
 
-.team li .area {
+.section-team .container .team li .area {
   margin-bottom: 30px;
 }
 
@@ -391,9 +461,11 @@ ul {
   color: var(--primary-black-color);
   padding-top: 94px;
   padding-bottom: 50px;
+  /* box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+      0px 2px 1px rgba(0, 0, 0, 0.2); */
 }
 
-.who-name {
+.section-team .container .team li .who-name {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.2;
@@ -401,7 +473,7 @@ ul {
   color: var(--primary-black-color);
 }
 
-.area {
+.section-team .container .team li .area {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.2;
@@ -409,22 +481,146 @@ ul {
   color: var(--primary-text-color);
 }
 
+/* -------------------------------iconos en section team ------------------------------------------------*/
+
+/* .icon-inst {
+  display: flex;
+  color: 
+  background-color:
+  fill: 
+} */
+
+section-team .container .team li ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+}
+
+.section-team .container .team li ul li {
+  display: flex;
+  width: 35px;
+  height: 35px;
+  border-radius: 25px;
+  background-color: ;
+}
+
+.section-team .container .team li ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  outline: none;
+  height: 35px;
+  width: 35px;
+  background-color: ;
+}
+
+.section-team .container .team li ul li .icon-social {
+  width: 20px;
+  height: 20px;
+  fill: var(--primary-text-color);
+}
+
+.section-team .container .team li ul li a:hover,
+.section-team .container .team li ul li a:focus {
+  background-color: var(--accent-color);
+}
+
+.section-team .container .team li ul li a:hover .icon-social,
+.section-team .container .team li ul li a:focus .icon-social {
+  fill: var(--primary-white-color);
+}
+
+/* .icon-social {
+  display:flexbox;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  box-shadow: none;
+  padding: 0%;
+  padding-bottom: 0%;
+  padding-left: 0%;
+  padding-right: 0;
+} */
+
 /*--------------------------------------------section clients -------------------------------------TODO:hw04--*/
+
+.our-clients {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.2;
+  text-align: center;
+  height: 42px;
+  color: var(--primary-black-color);
+  padding-top: 59px;
+  padding-bottom: 50px;
+}
 
 .container-title-clients {
   padding: 0 15px;
+  padding-top: 0px;
   width: 1200px;
   margin: 0 auto;
   gap: 80px;
   background-color: #ffffff;
 }
 
-.flex-clients {
+/* .container-c {
   display: flex;
+  padding: 0 15px;
+  width: 1200px;
+  margin: 0 auto;
+  gap: 80px;
+} */
+
+.container-title-clients .container ul {
   justify-content: space-between;
+  padding-bottom: 151px;
+  padding-top: 44px;
 }
 
-.container-clients {
+.container-title-clients .container ul li {
+}
+
+.container-title-clients .container ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 170px;
+  height: 81px;
+  border-radius: 4px;
+  border: 1px var(--line-box-clients) solid;
+}
+
+.container-title-clients .container ul li a .icon-clients {
+  width: 106px;
+  height: 51px;
+  fill: #afb1b8;
+}
+
+
+.container-title-clients .container ul li a:hover, 
+.container-title-clients .container ul li a:focus {
+  border-color: var(--accent-color);
+}
+
+.container-title-clients .container ul li a:hover .icon-clients,
+.container-title-clients .container ul li a:focus .icon-clients{
+  fill: var(--accent-color);
+}
+
+
+
+
+/* .flex-clients {
+  display: flex;
+  justify-content: space-between;
+} */
+
+/* .container-clients {
   color: #188ce8;
   background-color: #ffffff;
   display: flex;
@@ -432,13 +628,79 @@ ul {
   width: 1200px;
   margin: 0 auto;
   gap: 80px;
-}
+
+} */
+
+/* .container-clients {
+  color: #188ce8;
+  background-color: #ffffff;
+  display: flex;
+  padding: 15px;
+  width: 1200px;
+  margin: 0 auto;
+  gap: 80px;
+} */
 
 .icon-client {
   height: 52px;
   width: 106px;
   color: #188ce8;
 }
+
+.icon-clients {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  width: 45px;
+  height: 41px;
+}
+
+.clients .client-1 {
+  list-style: none;
+  width: 20px;
+  padding-top: 89px;
+  margin-left: 30px;
+}
+
+.container-clients {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 150px;
+  height: 100px;
+  background: red;
+  cursor: pointer;
+}
+
+/* .benefits {
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  display: flex;
+  width: 100%;
+}
+
+.benefits .benef-l {
+  list-style: none;
+  width: 240px;
+  padding-top: 89px;
+  margin-left: 30px;
+} */
+
+/* .benefits-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 4px;
+  width: 270px;
+  height: 120px;
+  background: #f5f4fa;
+  cursor: pointer;
+} */
 
 /*--------------------------------------------------portfolio section------------------------------*/
 
@@ -472,6 +734,7 @@ ul {
   margin: 0 auto;
   padding-top: 106px;
   padding-bottom: 50px;
+  justify-content: center;
 }
 
 .menu li button:hover,
@@ -561,6 +824,7 @@ footer {
 
 address ul {
   list-style: none;
+  display:block
 }
 
 address .contact {
@@ -641,6 +905,67 @@ address .contact:hover {
   color: #ffffff;
   background-color: var(--accent-color);
 }
+
+/* --------------------------icons in the footer----------------- */
+.footer-icons-container {
+  display: flex;
+  margin-left: 516px;
+  justify-content: space-between;
+  width: 206px;
+}
+
+footer li .insocialred {
+  line-height: 16.41px;
+  color:#ffffff;
+  padding-bottom: 10px;
+  margin-left: 516px;
+}
+
+footer li ul li {
+  display: flex;
+  width: 45px;
+  height: 45px;
+  border-radius: 35px;
+  background-color: rgba(79, 77, 77, 0.5);
+}
+
+footer li ul li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 35px;
+  outline: none;
+  height: 45px;
+  width: 45px;
+  background-color: ;
+}
+
+footer li ul li a .icon-footer {
+  width: 20px;
+  height: 20px;
+  fill: var(--primary-white-color);
+} 
+
+footer li ul li a:hover,
+footer li ul li a:focus {
+  background-color: var(--accent-color);
+}
+
+li ul li a:hover .icon-footer,
+li ul li a:focus .icon-footer {
+  fill: var(--primary-white-color);
+}
+
+
+
+
+
+
+
+
+
+
+
 
 .portfolio-title {
   font-weight: 700;
