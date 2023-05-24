@@ -169,6 +169,8 @@ header nav .nav-menu .page {
   line-height: 1.2;
   letter-spacing: 0.02em;
   text-decoration: none;
+  display: flex;
+  align-items: center;
 }
 
 .nav-menu .page:hover,
@@ -216,35 +218,28 @@ ul {
   color: var(--accent-color);
 }
 
-header .container .contacts-menu .icon-mailbox {
-  width: 20px;
-  height: 20px;
-  fill: var(--primary-text-color);
-}
-
 header .container .contacts-menu .icon-celphone {
   width: 20px;
   height: 20px;
   margin-left: 30px;
-  fill: var(--primary-text-color);
+  margin-right: 10px;
   cursor: pointer;
+}
+
+svg {
+  fill: currentColor;
 }
 
 header li .icon-mailbox {
   display: flex;
-  margin-left: 20px;
-  top:1.16%
+  margin-right: 10px;
   justify-content: center;
   cursor: pointer;
 }
 
-
 .icon-contacts:hover {
   color: var(--accent-color);
 }
-
-
-
 
 /*-------------------------------main content section-----------------------------*/
 /*----------------------------------hero-sections----------------------------------------*/
@@ -394,11 +389,14 @@ header li .icon-mailbox {
 .smalltext {
   color: var(--primary-white-color);
   position: absolute;
-  top: 80%;
-  left: 50%;
-  transform: translate(-50%, 50%);
-  width: 212px;
   text-transform: uppercase;
+  bottom: 0;
+  height: 70px;
+  width: 100%;
+  background-color: rgba(47, 48, 58, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* TODO: ensayo para poder poner el background sobre la imagen */
@@ -431,25 +429,27 @@ header li .icon-mailbox {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .section-team .container .team li {
   background-color: var(--primary-white-color);
   text-align: center;
   list-style: none;
-  margin-left: 22px;
-  margin-top: 50px;
-  margin-bottom: 94px;
+  width: 270px;
+  height: 428px;
+  margin-left: 18px;
   border-radius: 0px 0px 4px 4px;
-  }
+  margin-bottom: 94px;
+  justify-content: space-between;
+}
 
 .section-team .container .team li .who-name {
   margin: 20px 0 10px 0;
 }
 
 .section-team .container .team li .area {
-  margin-bottom: 30px;
+  margin-bottom: 16px;
 }
 
 .our-team {
@@ -483,39 +483,35 @@ header li .icon-mailbox {
 
 /* -------------------------------iconos en section team ------------------------------------------------*/
 
-/* .icon-inst {
-  display: flex;
-  color: 
-  background-color:
-  fill: 
-} */
-
 section-team .container .team li ul {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 15px;
   padding: 10px 20px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }
 
 .section-team .container .team li ul li {
   display: flex;
-  width: 35px;
-  height: 35px;
-  border-radius: 25px;
-  background-color: ;
+  width: 44px;
+  height: 44px;
+  border-radius: 22px;
+  /* background-color: red; */
+  align-items: center;
+  justify-content: center;
 }
 
 .section-team .container .team li ul li a {
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 25px;
+  border-radius: 22px;
   outline: none;
-  height: 35px;
-  width: 35px;
-  background-color: ;
+  height: 44px;
+  width: 44px;
+  /* margin-bottom: 80px; */
+  /* background-color: greenyellow; */
 }
 
 .section-team .container .team li ul li .icon-social {
@@ -536,13 +532,14 @@ section-team .container .team li ul {
 
 /* .icon-social {
   display:flexbox;
-  width: 40px;
-  height: 40px;
-  border-radius: 50px;
+  width: 60px;
+  height: 60px;
+  border-radius: 22px;
   box-shadow: none;
-  padding: 0%;
-  padding-bottom: 0%;
-  padding-left: 0%;
+  background-color: violet;
+  padding: 0;
+  padding-bottom: 0px;
+  padding-left: 0;
   padding-right: 0;
 } */
 
@@ -601,19 +598,15 @@ section-team .container .team li ul {
   fill: #afb1b8;
 }
 
-
-.container-title-clients .container ul li a:hover, 
+.container-title-clients .container ul li a:hover,
 .container-title-clients .container ul li a:focus {
   border-color: var(--accent-color);
 }
 
 .container-title-clients .container ul li a:hover .icon-clients,
-.container-title-clients .container ul li a:focus .icon-clients{
+.container-title-clients .container ul li a:focus .icon-clients {
   fill: var(--accent-color);
 }
-
-
-
 
 /* .flex-clients {
   display: flex;
@@ -824,7 +817,7 @@ footer {
 
 address ul {
   list-style: none;
-  display:block
+  display: block;
 }
 
 address .contact {
@@ -916,7 +909,7 @@ address .contact:hover {
 
 footer li .insocialred {
   line-height: 16.41px;
-  color:#ffffff;
+  color: #ffffff;
   padding-bottom: 10px;
   margin-left: 516px;
 }
@@ -944,7 +937,7 @@ footer li ul li a .icon-footer {
   width: 20px;
   height: 20px;
   fill: var(--primary-white-color);
-} 
+}
 
 footer li ul li a:hover,
 footer li ul li a:focus {
@@ -955,17 +948,6 @@ li ul li a:hover .icon-footer,
 li ul li a:focus .icon-footer {
   fill: var(--primary-white-color);
 }
-
-
-
-
-
-
-
-
-
-
-
 
 .portfolio-title {
   font-weight: 700;
